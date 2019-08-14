@@ -8,6 +8,18 @@ import http from '../axios/http.js';
  */
 export const getUserMsgAPI = () => {
   return http({
-    url: '/query/login/user',
+    url: '/user',
+  });
+};
+
+/**
+ * @description 获取语音文件
+ */
+export const getAsrAudioFileAPI = (data: any = {}) => {
+  return http({
+    method: 'get',
+    url: '/audio',
+    data,
+    responseType: 'arraybuffer',
   });
 };

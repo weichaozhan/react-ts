@@ -32,19 +32,14 @@ const http = (config:any = {}) => {
   const newRequest = new Promise((resolve, reject) => {
     axios(Object.assign({}, config, {
       url: config.url,
-      method: config.method || 'post',
+      method: config.method || 'get',
       headers: headers,
       data: data,
       params: config.params || '',
       timeout: config.timeout || 0,
     }))
       .then((response) => {
-        if (/text\/html/.test(response.headers['content-type'])) {
-          message.error('请登录！');
-          location.href = '/logout';
-        } else {
-          resolve(response.data);
-        }
+        resolve(response.data);
       })
       .catch((error) => {
         reject(error);

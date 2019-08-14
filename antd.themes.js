@@ -1,5 +1,5 @@
 exports.theme1 = {
-  // 'font-size-base': '14px',
+  // 'font-size-base': '16px',
   // 'layout-header-background': '#0074e2',
   // 'layout-sider-background': '#0074e2',
   // 'menu-dark-submenu-bg': '#0074e2',

@@ -4,13 +4,14 @@ import {
   Button,
 } from 'antd';
 
+import MainLayout from './components/layout/Index';
+
 class App extends React.Component<any, any> {
   public render() {
     return (
-      <div className="test c-red" >
-        <Button type="primary" >APP</Button>
+      <MainLayout>
         <Router />
-      </div>
+      </MainLayout>
     );
   }
 }

@@ -1,0 +1,91 @@
+@sider-collapse-controller-width: 16px;
+
+.ant-spin-spinning--outter {
+  max-height: 100%!important;
+  background: #fff;
+}
+
+.layout-sider {
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+  .logo--header {
+    padding-right: 30px;
+    height: 64px;
+    line-height: 64px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #cfcfcf;
+    overflow: hidden;
+  }
+  .logo-title {
+    width: 28px;
+    height: 40px;
+    margin-right: 6px;
+    display: inline-block;
+    background: url(../../assets/images/logo.png) 0 50% no-repeat;
+    vertical-align: middle;
+  }
+  &:hover .sider-collapse-controller {
+    visibility: visible;
+    opacity: 1;
+  }
+  .sider-collapse-controller {
+    width: @sider-collapse-controller-width;
+    height: 22px;
+    position: absolute;
+    right: -@sider-collapse-controller-width;
+    top: 50%;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    transition: opacity .3s;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+
+    &::after,&::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      border: @sider-collapse-controller-width/2 solid rgba(0,0,0,0.5);
+    }
+    &::after {
+      top: -@sider-collapse-controller-width;
+      border-color: transparent transparent rgba(0,0,0,0.5) rgba(0,0,0,0.5); 
+    }
+    &::before {
+      bottom: -@sider-collapse-controller-width;
+      border-color: rgba(0,0,0,0.5) transparent transparent rgba(0,0,0,0.5); 
+    }
+  }
+}
+
+.header {
+  .head__user-msg {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    float: right;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    
+    & > span {
+      margin-left: 10px;
+    }
+    .head-img {
+      width: 36px;
+      height: 36px;
+      background: url('../../assets/images/head.png') 50% 50% no-repeat;
+      background-size: 100%;
+      border-radius: 26px;
+    }
+  }
+}
+
+.layout-content {
+  padding: 20px 40px;
+  height: calc(~'100vh - 64px');
+  overflow: auto;  
+}

@@ -6,20 +6,7 @@ import React from 'react';
 import Svg404 from '../assets/images/404.svg';
 
 class NoMatch extends React.Component {
-  constructor() {
-    super();
-    
-    this.state = {
-    };
-  }
-
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
-  }
-
-  render() {
+  public render() {
     return (
       <div className="f-vhc" style={{ height: 'calc(100vh - 160px)', }}>
         <img className="mr120" src={Svg404}></img>

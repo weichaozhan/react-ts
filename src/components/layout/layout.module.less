@@ -1,4 +1,4 @@
-@sider-collapse-controller-width: 16px;
+@import '../../styles/constatnt.less';
 
 .ant-spin-spinning--outter {
   max-height: 100%!important;
@@ -9,8 +9,8 @@
   box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
   .logo--header {
     padding-right: 30px;
-    height: 64px;
-    line-height: 64px;
+    height: @sider-header-height;
+    line-height: @sider-header-height;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
@@ -24,6 +24,7 @@
     margin-right: 6px;
     display: inline-block;
     background: url(../../assets/images/logo.png) 0 50% no-repeat;
+    background-size: contain;
     vertical-align: middle;
   }
   &:hover .sider-collapse-controller {
@@ -62,6 +63,10 @@
 }
 
 .header {
+  &:global(.ant-layout-header) {
+    height: @sider-header-height;
+  }
+
   .head__user-msg {
     display: flex;
     height: 100%;

@@ -15,7 +15,7 @@ class AppSider extends React.Component<IProps, any> {
 
     return (
       <Sider className={`${styles['layout-sider']} ${className} pos-r`}>
-        <div className="logo--header">
+        <div className={styles['logo--header']}>
           <div>
             <span className={styles['logo-title']}></span>
           </div>

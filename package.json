@@ -12,7 +12,6 @@
   },
   "author": "",
   "license": "ISC",
-  "typings": "typings/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
@@ -92,6 +91,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.4.4",
     "@types/qs": "^6.5.3",
+    "@types/react-redux": "^7.1.1",
     "antd": "^3.21.4",
     "axios": "^0.18.0",
     "copy-to-clipboard": "^3.2.0",
@@ -100,7 +100,9 @@
     "qs": "^6.6.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
     "wavesurfer.js": "^2.2.1"
   },
   "browserslist": [

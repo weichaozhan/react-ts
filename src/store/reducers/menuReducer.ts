@@ -6,7 +6,7 @@ import {
 import NAV_LIST from '../../constant/navList';
 
 const initialState: StoreReduxMenu.IState = {
-  collapsed: false, // 是否收起菜单
+  collapsed: localStorage.getItem('collapse') === 'true' ? true : false, // 是否收起菜单
   menuList: [], // 权限菜单
   menuSelected: '', // 选中的菜单
 };
@@ -14,6 +14,7 @@ const initialState: StoreReduxMenu.IState = {
 const menuReduser = (state: StoreReduxMenu.IState = initialState, action: StoreReduxMenu.IAction) => {
   switch (action.type) {
     case CHANGE_COLLAPSE:
+      localStorage.setItem('collapse', action.collapsChange);
       return {
         ...state,
         collapsed: action.collapsChange,
@@ -21,7 +22,7 @@ const menuReduser = (state: StoreReduxMenu.IState = initialState, action: StoreR
 
     case SET_AUTH_MENU:
       return {
-        state,
+        ...state,
         menuList: action.menuList,
       };
 
@@ -31,7 +32,7 @@ const menuReduser = (state: StoreReduxMenu.IState = initialState, action: StoreR
         for (let i = 0; i < list.length; i++) {
           const item = list[i];
 
-          if ((item.children as Array<IMenuItem>).length > 0) {
+          if (item.children && (item.children as Array<IMenuItem>).length > 0) {
             buildList(item.children as Array<IMenuItem>);
           } else {
             if (item.navId === action.menuSelected) {

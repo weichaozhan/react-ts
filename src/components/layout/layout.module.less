@@ -1,5 +1,13 @@
 @import '../../styles/constatnt.less';
 
+:global(.ant-spin-nested-loading > div > .ant-spin).loading--app {
+  max-height: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+}
+
 .ant-spin-spinning--outter {
   max-height: 100%!important;
   background: #fff;
@@ -8,7 +16,6 @@
 .layout-sider {
   box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
   .logo--header {
-    padding-right: 30px;
     height: @sider-header-height;
     line-height: @sider-header-height;
     color: #fff;
@@ -91,6 +98,6 @@
 
 .layout-content {
   padding: 20px 40px;
-  height: calc(~'100vh - 64px');
+  height: ~"calc(100vh - @{sider-header-height})";
   overflow: auto;  
 }

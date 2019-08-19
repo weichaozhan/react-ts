@@ -14,6 +14,26 @@ const routes: Array<RouteProps> = [
     exact: true,
     component: suspenseComponent(Test),
   },
+  {
+    path: '/b',
+    exact: true,
+    component: suspenseComponent(Test),
+  },
+  {
+    path: '/c',
+    exact: true,
+    component: suspenseComponent(Test),
+  },
+  {
+    path: '/d',
+    exact: true,
+    component: suspenseComponent(Test),
+  },
+  {
+    path: '/e',
+    exact: true,
+    component: suspenseComponent(Test),
+  },
 ];
 
 export default routes;

@@ -1,13 +1,52 @@
 const Mock = require('mockjs');
 
 module.exports = function (router, koaBody) {
-  router.post('/user', koaBody(), async (ctx, next) => {
+  router.get('/api/user/current', koaBody(), async (ctx, next) => {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    })
+      .then(() => {
+        const data = Mock.mock({
+          'errorCode': null,
+          'errorMsg': null,
+          'success': true,
+          'data': {
+            "id": null,
+            "username": "wczhan",
+            "employeeId": "S77770",
+            "email": "wczhan@Ctrip.com",
+            "deptName": "AI研发部",
+            "business": "IT",
+            "status": null,
+            "chsName": "zwc詹伟超",
+            "remark": null,
+            "operator": null,
+            "operateIp": null,
+            "createTime": null,
+            "datachangeLasttime": null,
+            "roleList": null,
+            "roleIds": null
+          },
+        });
+        ctx.body = data;
+        next();
+      });
+    
+  });
+
+  router.get('/api/auth/perms', koaBody(), async (ctx, next) => {
     const data = Mock.mock({
-      'code': 1000000,
-      'msg': 'success',
-      'data': {
-          status: 'request'
-      },
+      'errorCode': null,
+      'errorMsg': null,
+      'success': true,
+      'data': [
+        '/a',
+        '/b',
+        '/c',
+        '/f',
+      ],
     });
     ctx.body = data;
     await next();

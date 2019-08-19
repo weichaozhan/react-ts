@@ -1,14 +1,23 @@
 /**
  * @description 全局接口
  */
-import http from '../axios/http.js';
+import http from '../axios/http';
 
 /**
  * @description 用户信息查询接口
  */
 export const getUserMsgAPI = () => {
   return http({
-    url: '/user',
+    url: '/api/user/current',
+  });
+};
+
+/**
+ * @description 用户权限查询接口
+ */
+export const getUserAuthAPI = () => {
+  return http({
+    url: '/api/auth/perms',
   });
 };
 

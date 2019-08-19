@@ -19,6 +19,7 @@ module.exports = {
     'indent': ['error', 2, { 'SwitchCase': 1 }],
     'no-trailing-spaces': ['error', { 'skipBlankLines': true }],
     'react/jsx-indent': ['error', 2],
+    'react/jsx-indent-props': ['error', 2],
     '@typescript-eslint/indent': ['error', 2, { 'SwitchCase': 1, 'flatTernaryExpressions': true }],
     '@typescript-eslint/prefer-function-type': 'off',
     '@typescript-eslint/prefer-for-of': 'off',

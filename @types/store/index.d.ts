@@ -1,3 +1,23 @@
+declare namespace StoreReduxUser {
+  import { AnyAction } from "redux";
+  
+  interface IAction extends AnyAction {
+    type?: string;
+    [propName: string]: any;
+  }
+
+  interface IState {
+    username?: string;
+    employeeId?: string|number;
+    email?: string;
+    deptName?: string;
+    business?: string;
+    chsName?: string;
+    auth?: Array<string>;
+    [propsName: string]: any;
+  }
+}
+
 declare namespace StoreReduxTest {
   import { AnyAction } from "redux";
   
@@ -26,3 +46,17 @@ declare namespace StoreReduxMenu {
     menuSelected?: IMenuItem | string; // 选中的菜单
   }
 }
+
+declare namespace StoreReduxTools {
+  import { AnyAction } from "redux";
+  
+  interface IAction extends AnyAction {
+    type?: string;
+    [propName: string]: any;
+  }
+
+  interface IState {
+    loading?: boolean; // 是否 loading
+  }
+}
+

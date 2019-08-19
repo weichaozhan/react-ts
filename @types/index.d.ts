@@ -7,5 +7,6 @@ interface IMenuItem {
   name: string;
   icon: string;
   link?: string;
+  parents?: Array<IMenuItem>;
   children?: Array<IMenuItem>;
 }

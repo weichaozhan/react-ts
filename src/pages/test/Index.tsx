@@ -8,18 +8,21 @@ import {
 
 import * as menuAction from '../../store/actions/menuAction';
 
+
 interface IProps extends RouteComponentProps<{}> {
   className?: string;
 }
+
 
 class Test extends React.Component<IProps, any> {
   public static defaultProps = {
     className: '',
   };
 
-  public render() {
-    console.log(this.props);
+  public componentDidMount() {
+  }
 
+  public render() {
     return (
       <div>
         <Button type="primary" >Test</Button>
@@ -42,7 +45,7 @@ const mapDispatchToProps = (dispatch: Function,) => {
  * @description 绑定 store 到props
  * @param {Object} state store
  */
-const mapStateToProps = (state: StoreReduxMenu.IState,) => {
+const mapStateToProps = (state: any,) => {
   return {
     ...state,
   };

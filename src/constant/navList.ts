@@ -1,26 +1,49 @@
-let navList: Array<IMenuItem> = [
-  {
-    navId: '0',
-    name: '文本',
-    icon: 'book',
-    link: '',
-    children: [
-      {
-        navId: '0-0',
-        name: '实体标注',
-        icon: 'windows',
-        link: '/project/entity',
-        children: [],
-      },
-      {
-        navId: '0-1',
-        name: '分类标注',
-        icon: 'bulb',
-        link: '/project/classification',
-        children: [],
-      }
-    ],
-  },
-];
+const buildNavRelation = (): Array<IMenuItem> => {
+  const navList: Array<IMenuItem> = [
+    {
+      navId: '0',
+      name: '测试',
+      icon: 'appstore',
+      link: '/a',
+      children: [],
+    },
+    {
+      navId: '1',
+      name: '测试2',
+      icon: 'appstore',
+      link: '/b',
+    },
+    {
+      navId: '2',
+      name: '测试',
+      icon: 'appstore',
+      children: [
+        {
+          navId: '2-1',
+          name: '测试3',
+          icon: 'appstore',
+          link: '/f',
+        },
+      ],
+    },
+  ];
+  /**
+   * @description 构建父子关系
+   * @param {Array} list 列表
+   * @param {Array} parents 祖先列表
+   */
+  const buildList = (list: Array<IMenuItem>, parents: Array<IMenuItem>) => {
+    for (let i = 0; i < list.length; i++) {
+      list[i].parents = parents;
 
-export default navList;
+      if (list[i].children && (list[i].children as Array<IMenuItem>).length > 0) {
+        buildList((list[i].children as Array<IMenuItem>), [...parents, list[i]]);
+      }
+    }
+  };
+  
+  buildList(navList, []);
+  return navList;
+};
+
+export default buildNavRelation();

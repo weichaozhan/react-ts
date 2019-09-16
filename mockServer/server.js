@@ -8,11 +8,11 @@ const koaBody = require('koa-body');
 const cacheControl = require('koa-cache-control');
 const app = new Koa();
 const router = new Router();
-const port = 9000;
+const port = 9001;
 
 // 跨域处理
 app.use(CORS({
-  origin: 'http://localhost:3001',
+  origin: 'http://localhost:3009',
   credentials: true,
   allowMethods: [
       'GET',

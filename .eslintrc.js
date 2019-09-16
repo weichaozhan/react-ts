@@ -1,21 +1,22 @@
 module.exports = {
-  'extends': [
+  extends: [
     'eslint-config-alloy/react', 
     'eslint-config-alloy/typescript'
   ],
-  'globals': {
+  globals: {
     // 全局变量
     // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
     '__DEV__': false
   },
-  'parserOptions': {
+  parserOptions: {
     'ecmaVersion': 7,
     'sourceType': 'module',
     'ecmaFeatures': {
         'jsx': true,
     }
   },
-  'rules': {
+  plugins: ['react-hooks'],
+  rules: {
     'indent': ['error', 2, { 'SwitchCase': 1 }],
     'no-trailing-spaces': ['error', { 'skipBlankLines': true }],
     'react/jsx-indent': ['error', 2],

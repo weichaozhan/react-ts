@@ -7,6 +7,7 @@ import suspenseComponent from '../tools/suspenseComponent';
 import { RouteProps } from 'react-router';
 
 const Test = lazy(() => import('../pages/test/Index')); // 测试
+const TestHooks = lazy(() => import('../pages/test/TestHooks')); // 测试
 
 const routes: Array<RouteProps> = [
   {
@@ -17,7 +18,7 @@ const routes: Array<RouteProps> = [
   {
     path: '/b',
     exact: true,
-    component: suspenseComponent(Test),
+    component: suspenseComponent(TestHooks),
   },
   {
     path: '/c',

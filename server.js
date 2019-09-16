@@ -43,7 +43,7 @@ app.use(webpackHotMiddleware(compiler));
 
 var proxyObj = {
 
-  target: `http://localhost:9000`, // 本地 mock server
+  target: `http://localhost:9001`, // 本地 mock server
   
   // router: {
   //   '/i/song.mp3': 'http://www.w3school.com.cn',

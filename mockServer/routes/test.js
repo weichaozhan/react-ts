@@ -16,7 +16,7 @@ module.exports = function (router, koaBody) {
             "id": null,
             "username": "wczhan",
             "employeeId": "S77770",
-            "email": "wczhan@Ctrip.com",
+            "email": "wczhan@qq.com",
             "deptName": "AI研发部",
             "business": "IT",
             "status": null,
